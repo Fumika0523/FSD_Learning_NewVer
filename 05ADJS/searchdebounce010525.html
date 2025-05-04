@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <input type="text"/> -->
+    <!-- <input type="text" name="" id=""> -->
+    <input type="search" name="" id="search">
+    <script>
+        //fetching || making api || search
+        function fetchData(searchTerm){
+            console.log("Searching For",searchTerm)
+            //api call --
+        }
+        function debounce(fn,delay){
+            let timeoutId;
+            return function (args){
+                clearTimeout(timeoutId)
+                timeoutId=setTimeout(()=>fn(args),delay)
+            }
+        }
+
+        const debounceFetch=debounce(fetchData,500)
+        console.log(debounceFetch)
+        debounceFetch("Hello")
+        debounceFetch("Hello Fumika")
+        
+        // Input Box >> Create with help of JS
+        // let inputBox = document.createElement("input")
+        // console.log(inputBox)
+        // inputBox.innerText="Search"
+        // inputBox.setAttribute("id","inputBoxSearch")
+
+        // inputBox.setAttribute("type","search")
+        // inputBox.setAttribute("name","Search")
+        // document.body.append(inputBox)
+
+        // let btn = document.createElement("button")
+        // btn.innerText="Submit"
+        // btn.setAttribute("id","btnSubmit")
+        // document.body.append(btn)
+
+        let search = document.getElementById('search')
+        console.log(search) 
+
+        search.addEventListener("input",(e)=>{
+            //console.log("e.target.value",e.target.value)
+            debounceFetch(e.target.value)
+        })
+
+
+        //create another inbox with JS and attach event listener to it and perform debounce
+        let newInputBox = document.createElement("input")
+        console.log(newInputBox)
+        newInputBox.setAttribute("id","newInBoxSearch")
+
+        document.body.append(newInputBox)
+
+        newInputBox.addEventListener("input",(e)=>{
+            debounceFetch(e.target.value)
+        })
+
+        //when you create a new element
+</script>
+</body>
+</html>

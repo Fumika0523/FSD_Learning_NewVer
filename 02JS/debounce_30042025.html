@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sayHello(name){
+        //execution is inside and output inside the function
+        console.log("Hello World",name)
+        }
+
+        function debounce(fun,delay){ //parameter
+            let timeoutId; // to store the timerId settimeout
+            return function (args){
+                clearTimeout(timeoutId) //clear if any scheduled a new call after delay
+
+                timeoutId = setTimeout(()=>fun(args),delay)
+
+            }
+            
+        }
+
+        // console.log(debounce())
+        const debouncedHello = debounce(sayHello,500) //args
+        debouncedHello("Al")
+        debouncedHello("Alice")
+        debouncedHello("Ali")
+
+        console.log(debouncedHello)
+        //console.log(debouncedHello+20) 
+        //setTimeout() >> execute 1 time >> after certain delay
+        //clearTime()
+        //setInterval() >> execute n time >> after certain interval
+        //clearInterval()
+
+        //searching >> execute 1 time >> after certain delay >>1nce search
+        
+        //functon >> calculate them sum of marks >> return total >> execution || o/p will be used outside
+        //function >> calculate the % >> total of score / total masks * 100
+
+        //Debounce >>it is  Higher order function >> (1 function another takes another function)
+        //It takes Function as an input and return a new debounce function -i.e new version of that function
+
+        //Usage:
+        //Wait / pause in a series of events
+        //It runs a function only delay after the delay and whatever previous calls are there, they are cancelled.
+
+        //Debounce function returns a new function that delays calling fn until after delay ms with further no calls
+
+        //Search ?
+    
+    
+    </script>
+</body>
+</html>
