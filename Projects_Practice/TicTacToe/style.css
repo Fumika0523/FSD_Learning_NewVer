@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Itim', cursive;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 .background {
@@ -11,7 +11,7 @@
 }
 
 .title {
-    color: white;
+    color: rgb(244, 223, 195);
     text-align: center;
     font-size: 40px;
     margin-top: 10%;
@@ -80,5 +80,6 @@
 }
 
 #reset {
-    background-color: #FF3860;
+    background-color: #b80529;
+    padding:5px 15px
 }
