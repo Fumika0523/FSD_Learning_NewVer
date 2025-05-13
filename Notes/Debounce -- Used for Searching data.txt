@@ -1,0 +1,33 @@
+Debounce -- Used for Searching data. (search box)
+
+EXample:Searching Blog Data
+
+1. Creating useState to store data and impletement API call
+const [blogData,setBlogData] = useState([])
+
+const getBlogData = async()=>{
+  console.log("Blog Data is called...")
+  let res = await fetch("https://66760c9da8d2b4d072f24534.mockapi.io/movie/Blog")
+  let data = await res.json()
+  console.log(data)
+  setBlogData(data)
+}
+useEffect(()=>{
+  getBlogData()
+},[]) 
+
+2. 
+
+const [searchTerm,setSearchTerm] = useState("") //initial value
+const [filterBlogData,setFilterBlogData] = useState([])
+
+  const fetchData = (searchTerm)=>{
+    console.log("Searching For",searchTerm)
+    //apil call
+    const filterData=(searchText,allBlogs)=>{
+      return allBlogs.filter((element)=>
+        element.title.toLowerCase().includes(searchText.toLowerCase()) //searching by element.title >> JSON structure always review
+      )
+    }
+    return filterData(searchTerm,blogData)
+  }
